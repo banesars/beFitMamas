@@ -16,6 +16,18 @@ CREATE TABLE users (
     UNIQUE (email)
 );
 
+-- Create the table for storing user profiles
+CREATE TABLE profiles (
+    profile_id INT AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    full_name VARCHAR(100),
+    date_of_birth DATE,
+    bio TEXT,
+    profile_picture VARCHAR(255),
+    PRIMARY KEY (profile_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
 -- Create the table for storing workouts/exercises
 CREATE TABLE workouts (
     workout_id INT AUTO_INCREMENT,
@@ -67,16 +79,3 @@ CREATE TABLE posts (
     FOREIGN KEY (topic_id) REFERENCES topics(topic_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-
--- Create the table for storing user profiles
-CREATE TABLE profiles (
-    profile_id INT AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    full_name VARCHAR(100),
-    date_of_birth DATE,
-    bio TEXT,
-    profile_picture VARCHAR(255),
-    PRIMARY KEY (profile_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
-
