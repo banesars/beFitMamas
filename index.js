@@ -19,4 +19,4 @@ client.on('messageCreate', (message) => {
     message.reply('Hey! Welcome to BeFitMamas Community Server.');
 })
 
-client.login('MTEyNjkzNDE4MzEwOTk4NDMyNw.GI_loh.Yr5aZOK-yg1wgSFMtMUtcePgzLuzyc9bGRUJBw');
+client.login('');
